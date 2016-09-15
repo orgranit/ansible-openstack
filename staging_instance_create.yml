@@ -1,0 +1,21 @@
+  - name: launch instance {{ index }} in {{ project }}
+    os_server:
+       state: present
+       auth:
+         auth_url: http://10.8.195.11:5000/v2.0  
+         username: admin
+         password: 
+         project_name: "{{ project }}"
+       image:   cirros
+       flavor: abraverm_api_test_flavor
+       auto_ip: no
+       name: abraverm_api_test_instance_{{ index }}
+  - name: stop instance {{ index }} in {{ project }}
+    os_server_actions:
+       action: stop
+       auth:
+         auth_url: http://10.8.195.11:5000/v2.0 
+         username: admin
+         password: 
+         project_name: "{{ project }}"
+       server: abraverm_api_test_instance_{{ index }}

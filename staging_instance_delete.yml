@@ -1,0 +1,10 @@
+  - name: delete instance {{ index }}
+    os_server:
+       state: absent
+       auth:
+         auth_url: http://10.8.195.11:5000/v2.0
+         username: admin
+         password: 
+         project_name: monitoring
+       name: abraverm_api_test_{{ index }}
+    ignore_errors: yes

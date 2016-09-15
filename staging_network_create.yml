@@ -1,0 +1,9 @@
+  - name: create network {{ index }} in {{ project }}
+    os_network:
+       state: present
+       auth:
+         auth_url: http://10.8.195.11:5000/v2.0
+         username: admin
+         password: 
+         project_name: "{{ project }}"
+       name: abraverm_api_test_network_{{ index }}
