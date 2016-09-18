@@ -1,0 +1,4 @@
+- hosts: localhost
+  tasks:
+    - include: staging_instance_create.yml project=3rd index={{item}}
+      with_sequence: start=2 end=100
